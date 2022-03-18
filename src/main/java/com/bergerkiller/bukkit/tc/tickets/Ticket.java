@@ -324,8 +324,8 @@ public class Ticket {
         tag.putValue("ticketCreationTime", System.currentTimeMillis());
         tag.putValue("ticketNumberOfUses", 0);
         tag.putUUID("ticketOwner", owner.getUniqueId());
-        tag.putValue("ticketOwnerName", owner.getDisplayName());
-        ItemUtil.setDisplayName(item, "Train Ticket for " + this.getName());
+        tag.putValue("ticketOwnerName", owner.getName());
+        ItemUtil.setDisplayName(item, "Targeta de " + this.getName());
         return item;
     }
 }

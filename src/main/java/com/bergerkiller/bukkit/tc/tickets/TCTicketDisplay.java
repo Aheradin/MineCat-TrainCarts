@@ -41,19 +41,19 @@ public class TCTicketDisplay extends MapDisplay {
 
         Ticket ticket = TicketStore.getTicketFromItem(this.getMapItem());
         if (ticket == null) {
-            this.getLayer(1).draw(MapFont.MINECRAFT, 10, 40, MapColorPalette.COLOR_RED, "Invalid Ticket");
+            this.getLayer(1).draw(MapFont.MINECRAFT, 10, 40, MapColorPalette.COLOR_RED, "Targeta invalida");
         } else {
             this.getLayer(1).draw(MapFont.MINECRAFT, 10, 40, MapColorPalette.COLOR_BLACK, ticket.getName());
             if (TicketStore.isTicketExpired(this.getMapItem())) {
-                this.getLayer(1).draw(MapFont.MINECRAFT, 10, 57, MapColorPalette.COLOR_RED, "EXPIRED");
+                this.getLayer(1).draw(MapFont.MINECRAFT, 10, 57, MapColorPalette.COLOR_RED, "ESGOTAT");
             } else {
                 String text;
                 if (ticket.getMaxNumberOfUses() == 1) {
-                    text = "Single use";
+                    text = "Un sol us";
                 } else if (ticket.getMaxNumberOfUses() < 0) {
-                    text = "Unlimited uses";
+                    text = "Usos il·limitats";
                 } else {
-                    text = TicketStore.getNumberOfUses(this.getMapItem()) + "/" + ticket.getMaxNumberOfUses() + " uses";
+                    text = TicketStore.getNumberOfUses(this.getMapItem()) + "/" + ticket.getMaxNumberOfUses() + " usos";
                 }
                 this.getLayer(1).draw(MapFont.MINECRAFT, 10, 57, MapColorPalette.COLOR_BLACK, text);
             }

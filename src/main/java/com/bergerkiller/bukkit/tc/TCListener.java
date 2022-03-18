@@ -39,6 +39,7 @@ import static com.bergerkiller.bukkit.common.utils.MaterialUtil.getMaterial;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
+import org.bukkit.Color;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -206,9 +207,9 @@ public class TCListener implements Listener {
         if (killedByMember != null) {
             String deathMessage = killedByMember.getGroup().getProperties().getKillMessage();
             if (!deathMessage.isEmpty()) {
-                deathMessage = deathMessage.replaceAll("%0%", event.getEntity().getDisplayName());
+                deathMessage = deathMessage.replaceAll("%0%", event.getEntity().getName());
                 deathMessage = deathMessage.replaceAll("%1%", killedByMember.getGroup().getProperties().getDisplayName());
-                event.setDeathMessage(deathMessage);
+                event.setDeathMessage(Color.YELLOW + deathMessage);
             }
         }
     }
