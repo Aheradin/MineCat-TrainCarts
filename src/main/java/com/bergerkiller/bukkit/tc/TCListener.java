@@ -209,7 +209,7 @@ public class TCListener implements Listener {
             if (!deathMessage.isEmpty()) {
                 deathMessage = deathMessage.replaceAll("%0%", event.getEntity().getName());
                 deathMessage = deathMessage.replaceAll("%1%", killedByMember.getGroup().getProperties().getDisplayName());
-                event.setDeathMessage(Color.YELLOW + deathMessage);
+                event.setDeathMessage(ChatColor.YELLOW + deathMessage);
             }
         }
     }
