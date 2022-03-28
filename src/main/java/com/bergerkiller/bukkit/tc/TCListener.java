@@ -38,8 +38,8 @@ import com.bergerkiller.generated.net.minecraft.world.entity.EntityHandle;
 import static com.bergerkiller.bukkit.common.utils.MaterialUtil.getMaterial;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
-import org.bukkit.Color;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
